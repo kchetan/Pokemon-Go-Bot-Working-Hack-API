@@ -214,7 +214,11 @@ class PGoApi:
         position = self.get_position()
         neighbors = getNeighbors(self._posf)
         return self.get_map_objects(latitude=position[0], longitude=position[1], since_timestamp_ms=[0]*len(neighbors), cell_id=neighbors).call()
-
+'''
+The attempt_catch function is invoked when a pokemon is tried to be caught,It calls a function which take the parameters
+the reticle size , curve ball or spin on the ball , if the pokeball hit pokemon,and this inturn gives a responce 
+which informs the status of the pokemon after the attempt has been made.
+'''
     def attempt_catch(self,encounter_id,spawn_point_guid): #Problem here... add 4 if you have master ball
         for i in range(1,3): # Range 1...4 iff you have master ball `range(1,4)`
             r = self.catch_pokemon(
